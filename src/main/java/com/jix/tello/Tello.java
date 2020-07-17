@@ -49,11 +49,6 @@ public class Tello extends javax.swing.JFrame {
         setTitle("Tello");
         setLocation(new java.awt.Point(50, 100));
         setResizable(false);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 formKeyPressed(evt);
@@ -262,13 +257,7 @@ public class Tello extends javax.swing.JFrame {
                 this.close();
                 break;
         }
-
-        jTextArea2.append("Closed connection..." + "\n");
     }//GEN-LAST:event_formKeyPressed
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        this.close();
-    }//GEN-LAST:event_formWindowClosing
 
     public static void main(String args[]) {
         try {
@@ -329,8 +318,8 @@ public class Tello extends javax.swing.JFrame {
     }
 
     public void close() {
-        this.ds.disconnect();
-        this.ds.close();
+        //this.ds.disconnect();
+        //this.ds.close();
         jLabel2.setText("Disconnected");
     }
 
