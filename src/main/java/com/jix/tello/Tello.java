@@ -214,60 +214,56 @@ public class Tello extends javax.swing.JFrame {
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         int keycode = evt.getKeyCode();
 
-        if (this.ds != null) {
-            switch (keycode) {
-                case java.awt.event.KeyEvent.VK_LEFT:
-                    jTextArea2.append("Left" + "\n");
-                    this.left((float) 20);
-                    break;
-                case java.awt.event.KeyEvent.VK_RIGHT:
-                    jTextArea2.append("Right" + "\n");
-                    this.right((float) 20);
-                    break;
-                case java.awt.event.KeyEvent.VK_DOWN:
-                    jTextArea2.append("Down..." + "\n");
-                    this.down((float) 20);
-                    break;
-                case java.awt.event.KeyEvent.VK_UP:
-                    jTextArea2.append("Up..." + "\n");
-                    this.up((float) 20);
-                    break;
-                case java.awt.event.KeyEvent.VK_W:
-                    jTextArea2.append("Fordward..." + "\n");
-                    this.forward((float) 20);
-                    break;
-                case java.awt.event.KeyEvent.VK_S:
-                    jTextArea2.append("Back..." + "\n");
-                    this.back((float) 20);
-                    break;
-                case java.awt.event.KeyEvent.VK_ENTER:
-                    jTextArea2.append("Takeof..." + "\n");
-                    this.takeof();
-                    break;
-                case java.awt.event.KeyEvent.VK_SPACE:
-                    jTextArea2.append("Land..." + "\n");
-                    this.land();
-                    break;
-                case java.awt.event.KeyEvent.VK_B:
-                    jTextArea2.append("Battery..." + "\n");
-                    this.battery();
-                    break;
-            }
-        } else {
-            switch (keycode) {
-                case java.awt.event.KeyEvent.VK_O:
-                    jTextArea2.append("Connect..." + "\n");
-                    this.connect();
-                    this.start();
-                    this.battery();
-                    break;
-                case java.awt.event.KeyEvent.VK_P:
-                    jTextArea2.append("Close conection..." + "\n");
-                    this.close();
-                    break;
-            }
-            jTextArea2.append("Closed connection..." + "\n");
+        switch (keycode) {
+            case java.awt.event.KeyEvent.VK_LEFT:
+                jTextArea2.append("Left" + "\n");
+                this.left((float) 20);
+                break;
+            case java.awt.event.KeyEvent.VK_RIGHT:
+                jTextArea2.append("Right" + "\n");
+                this.right((float) 20);
+                break;
+            case java.awt.event.KeyEvent.VK_DOWN:
+                jTextArea2.append("Down..." + "\n");
+                this.down((float) 20);
+                break;
+            case java.awt.event.KeyEvent.VK_UP:
+                jTextArea2.append("Up..." + "\n");
+                this.up((float) 20);
+                break;
+            case java.awt.event.KeyEvent.VK_W:
+                jTextArea2.append("Fordward..." + "\n");
+                this.forward((float) 20);
+                break;
+            case java.awt.event.KeyEvent.VK_S:
+                jTextArea2.append("Back..." + "\n");
+                this.back((float) 20);
+                break;
+            case java.awt.event.KeyEvent.VK_ENTER:
+                jTextArea2.append("Takeof..." + "\n");
+                this.takeof();
+                break;
+            case java.awt.event.KeyEvent.VK_SPACE:
+                jTextArea2.append("Land..." + "\n");
+                this.land();
+                break;
+            case java.awt.event.KeyEvent.VK_B:
+                jTextArea2.append("Battery..." + "\n");
+                this.battery();
+                break;
+            case java.awt.event.KeyEvent.VK_O:
+                jTextArea2.append("Connect..." + "\n");
+                this.connect();
+                this.start();
+                this.battery();
+                break;
+            case java.awt.event.KeyEvent.VK_P:
+                jTextArea2.append("Close conection..." + "\n");
+                this.close();
+                break;
         }
+
+        jTextArea2.append("Closed connection..." + "\n");
     }//GEN-LAST:event_formKeyPressed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -333,11 +329,9 @@ public class Tello extends javax.swing.JFrame {
     }
 
     public void close() {
-        if (this.ds != null) {
-            this.ds.disconnect();
-            this.ds.close();
-            jLabel2.setText("Disconnected");
-        }
+        this.ds.disconnect();
+        this.ds.close();
+        jLabel2.setText("Disconnected");
     }
 
     public void battery() {
