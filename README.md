@@ -1,2 +1,2 @@
 # telloswing
-Testing Tello functions in Java Swing app
+Testing Ryze Tech Tello Drone API in Java Swing app
