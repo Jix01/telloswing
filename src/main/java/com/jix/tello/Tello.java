@@ -249,7 +249,7 @@ public class Tello extends javax.swing.JFrame {
             case java.awt.event.KeyEvent.VK_O:
                 jTextArea2.append("Connect..." + "\n");
                 this.connect();
-                this.start();
+                this.initializing();
                 this.battery();
                 break;
             case java.awt.event.KeyEvent.VK_P:
@@ -308,7 +308,7 @@ public class Tello extends javax.swing.JFrame {
         }
     }
 
-    public void start() {
+    public void initializing() {
         try {
             this.sendData("command");
             jTextArea2.append("Respuesta iniciar..." + this.receiveData() + "\n");
